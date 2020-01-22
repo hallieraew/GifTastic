@@ -17,19 +17,20 @@ function createButtons() {
     }
 }
 
+createButtons();
 
-    $("#userSearch").on("click", function(event) {
+$("#userSearch").on("click", function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        var userSearch = $("#userInput").val().trim();
-        var userInput = userSearch;
+    var userSearch = $("#userInput").val().trim();
+    var userInput = userSearch;
 
-        topic.push(userInput);
+    topic.push(userInput);
 
-        createButtons();
+    createButtons();
 
-      });
+});
 
 
 $("button").on("click", function () {
@@ -52,9 +53,19 @@ $("button").on("click", function () {
 
                 var moodImage = $("<img>");
 
-                // moodImage.attr("src", results[i].images.fixed_height.url);
+                var moodImageStill = moodImage.attr("src", results[i].images.fixed_height_still.url)
+
+                var moodImageAnimate = moodImage.attr("src", results[i].images.fixed_height.url)
+
 
                 moodImage.attr("src", results[i].images.fixed_height_still.url);
+                moodImage.attr(
+                    {
+                        "data-still": moodImageStill,
+                        "data-animate": moodImageAnimate,
+                        "data-state": "still",
+                    }
+                )
 
                 var rating = results[i].rating;
 
@@ -65,20 +76,18 @@ $("button").on("click", function () {
 
                 $("#gifsHere").prepend(gifDiv);
             }
-        })
 
-    })
-            // $("#gifsHere").on("click", function() {
-    
-            //     var state = $(this).attr("src", results[i].images.fixed_height_still.url);
-    
-            //     if (moodImage === state) {
-            //       $(this).attr($(this).attr("src", results[i].images.fixed_height.url));
-            //     } else {
-            //       $(this).attr("src", $(this).attr("data-still"));
-            //       $(this).attr("data-state", "still");
-            //     }
-            //   });
-// var mood = set inside the click function for generating gifs i.e.
+            $("#gifsHere").on("click", function () {
+                console.log("clicked")
 
+                state = $(this).attr("src");
 
+                if (state === moodImageStill) {
+                    $(this).attr("src", moodImageAnimate);
+                } else {
+                    $(this).attr("src", moodImageStill);
+                }
+            });
+        });
+
+});
