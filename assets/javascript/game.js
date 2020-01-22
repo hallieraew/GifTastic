@@ -17,17 +17,19 @@ function createButtons() {
     }
 }
 
-$("#userSearch").on("click", function () {
 
-    var userSearch = $("#userSearch").val();
-    var userInput = userSearch;
-    
-    topic.push(userInput);
-    console.log(topic);
-    createButtons();
-})
+    $("#userSearch").on("click", function(event) {
 
-createButtons();
+        event.preventDefault();
+
+        var userSearch = $("#userInput").val().trim();
+        var userInput = userSearch;
+
+        topic.push(userInput);
+
+        createButtons();
+
+      });
 
 
 $("button").on("click", function () {
