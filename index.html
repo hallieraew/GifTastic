@@ -6,25 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 class="navbar-brand">GifTastic! Select your mood.</h1>
-        <form class="form-inline my-2 my-lg-0">
-            <input id ="userInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button id="userSearch" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <div class="mainPage">
+        <h2>GifTastic!</h2>
+        <br>
+        <p>This app utilizes the GIPHY API so that you can find the perfect gif to match your mood. Enter in a search
+            term below or select from the pre-selected moods on the page. When you search for
+            a key term, that will be added to the list so you can easily select over and over. When gifs first appear on
+            screen
+            they will be static, but simply click on each image to start and stop the
+            animation!</p>
+        <hr>
+        <br>
+        <form class="form-inline my-2 my-lg-0 row justify-content-center">
+            <input id="userInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="userSearch" class="btn btn-outline-dark" type="submit">Search</button>
         </form>
+        <br>
+        <div id="buttonsHere">
+
         </div>
-    </nav>
+        <div id="gifsHere">
 
-    <div id="buttonsHere">
-
-    </div>
-    <div id="gifsHere">
-
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

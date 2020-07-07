@@ -1,6 +1,18 @@
-.mood {
-    background-color: teal;
-    color: black;
-    padding: 5px;
+body {
+	background-image: url(../images/lidya-nada-_0aKQa9gr4s-unsplash.jpg);
+	justify-content: center;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+}
 
+.mood {
+	padding: 5px;
+	margin: 5px;
+}
+
+.mainPage {
+	background-color: whitesmoke;
+	margin: 20px;
+	padding: 60px;
+	font-family: "Roboto", sans-serif;
 }
