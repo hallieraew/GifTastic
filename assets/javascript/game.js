@@ -36,6 +36,7 @@ $("#userSearch").on("click", function(event) {
 
 	var userSearch = $("#userInput")
 		.val()
+		.toUpperCase()
 		.trim();
 	var userInput = userSearch;
 
